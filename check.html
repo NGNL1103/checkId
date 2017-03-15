@@ -10,56 +10,57 @@
     <!-- 最新編譯和最佳化的 JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    
+
     <script language="javascript">
-    function changeidentity() {
-        var unit_type = $('#sel_identity').val();
-        $('.identity').hide();
-        $('#method_' + unit_type).show();
-    }
+        function changeidentity() {
+            var unit_type = $('#sel_identity').val();
+            $('.identity').hide();
+            $('#method_' + unit_type).show();
+        }
     </script>
     <style>
-    .wrap {
-        font-family: "微軟正黑體", Arial;
-        font-size: 20px;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-    
-
-
+        .wrap {
+            font-family: "微軟正黑體", Arial;
+            font-size: 20px;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
     </style>
 </head>
 
 <body>
     <div class="wrap">
         <form action="">
-            
+
             <div class="col-sm-4">
-            <span>請選擇您的身分：</span>
-            <select name="identity" id="sel_identity" onchange="changeidentity()" class="form-control">
+                <span>請選擇您的身分：</span>
+                <select name="identity" id="sel_identity" onchange="changeidentity()" class="form-control">
                 <option value="0" default>請選擇</option>
                 <option value="1">必修學生</option>
                 <option value="2">教師</option>
+                <option value="3">醫師</option>
+                <option value="4">研究人員</option>
+                <option value="5"></option>
             </select></div>
-            <br>
-            <div id="method_1" class="identity col-xs-12" style="display: none;">
-                <table>
-                    <tr>
-                        <th>學校有在地圖上的</th>
-                        <td>請使用學號當帳號</td>
-                    </tr>
-                    <tr>
-                        <th>學校不在地圖上的</th>
-                        <td>請自行註冊</td>
-                    </tr>
-                </table>
-                <div style="max-width:1000px;"><img src="http://ethics103.nctu.edu.tw/Ethics103/Files/deco_pic/ree_schoolmap.png" alt="" class="img-responsive"></div>
-                </div>
-            <div id="method_2" class="identity" style="display: none;">教師</div>
         </form>
+        <br>
+        <div id="method_1" class="identity col-xs-12" style="display: none;">
+            <table>
+                <tr>
+                    <th>學校有在地圖上的</th>
+                    <td>請使用學號當帳號</td>
+                </tr>
+                <tr>
+                    <th>學校不在地圖上的</th>
+                    <td>請自行註冊</td>
+                </tr>
+            </table>
+            <div style="max-width:1000px;"><img src="http://ethics103.nctu.edu.tw/Ethics103/Files/deco_pic/ree_schoolmap.png" alt="" class="img-responsive"></div>
+        </div>
+        <div id="method_2" class="identity" style="display: none;">教師地圖</div>
+
     </div>
 </body>
 
