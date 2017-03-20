@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="utf-8">
@@ -19,49 +19,194 @@
         }
     </script>
     <style>
-        .wrap {
-            font-family: "微軟正黑體", Arial;
-            font-size: 20px;
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
+        @media (min-width: 768px) {
+            .container {
+                max-width: 750px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .hidden-mb {
+                display: none!important
+            }
+        }
+        
+        body {
+            padding-top: 20px;
         }
     </style>
 </head>
 
 <body>
-    <div class="wrap">
-        <form action="">
+    <div class="container">
+        <div class="row">
+            <form action="">
 
-            <div class="col-sm-4">
-                <span>請選擇您的身分：</span>
-                <select name="identity" id="sel_identity" onchange="changeidentity()" class="form-control">
+                <div class="col-sm-4">
+                    <span>請選擇您的身分：</span>
+                    <select name="identity" id="sel_identity" onchange="changeidentity()" class="form-control">
                 <option value="0" default>請選擇</option>
                 <option value="1">必修學生</option>
                 <option value="2">教師</option>
-                <option value="3">醫師</option>
-                <option value="4">研究人員</option>
-                <option value="5"></option>
-            </select></div>
-        </form>
-        <br>
-        <div id="method_1" class="identity col-xs-12" style="display: none;">
-            <table>
-                <tr>
-                    <th>學校有在地圖上的</th>
-                    <td>請使用學號當帳號</td>
-                </tr>
-                <tr>
-                    <th>學校不在地圖上的</th>
-                    <td>請自行註冊</td>
-                </tr>
-            </table>
-            <div style="max-width:1000px;"><img src="http://ethics103.nctu.edu.tw/Ethics103/Files/deco_pic/ree_schoolmap.png" alt="" class="img-responsive"></div>
-        </div>
-        <div id="method_2" class="identity" style="display: none;">教師地圖</div>
+                <option value="3">受科技部補助單位</option>
 
+            </select></div>
+            </form>
+            <br>
+            <div id="method_1" class="identity col-xs-12 " style="display: none;">
+                <table class="hidden-mb">
+                    <tr>
+                        <th>學校有在地圖上的</th>
+                        <td>請使用學號當帳號</td>
+                    </tr>
+                    <tr>
+                        <th>學校不在地圖上的</th>
+                        <td>請自行註冊</td>
+                    </tr>
+                </table>
+                <div style="max-width:1000px;"><img src="http://ethics103.nctu.edu.tw/Ethics103/Files/deco_pic/ree_schoolmap.png" alt="" class="img-responsive hidden-mb"></div>
+                <table align="center" border="1" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td style="width: 277px; vertical-align: top; text-align: center;">
+                                <p style="text-align: left;">
+                                    <span style="font-size: 16px;">臺北</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立政治大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立陽明大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立臺灣師範大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">臺北市立大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">大同大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">世新大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">東吳大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">康寧大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">實踐大學</span></li>
+                                </ul>
+                                <p style="text-align: left;">
+                                    <span style="font-size:16px;">新北</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">華梵大學</span></li>
+                                </ul>
+                                <p style="text-align: left;">
+                                    <span style="font-size:16px;">桃園</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立中央大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">元智大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">長庚大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">開南大學</span></li>
+                                </ul>
+                                <p style="text-align: left;">
+                                    <span style="font-size:16px;">新竹</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立交通大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立清華大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">中華大學</span></li>
+                                </ul>
+                                <p style="text-align: left;">
+                                    <span style="font-size:16px;">臺中</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立中興大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立臺中教育大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">中山醫學大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">中國醫藥大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">靜宜大學</span></li>
+                                </ul>
+                            </td>
+                            <td style="width: 277px; vertical-align: top; text-align: center;">
+                                <p style="text-align: left;">
+                                    <span style="font-size:16px;">嘉義</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立中正大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立嘉義大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">稻江科技暨管理學院</span></li>
+                                </ul>
+                                <p style="text-align: left;">
+                                    <span style="font-size:16px;">臺南</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立臺南大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">長榮大學</span></li>
+                                </ul>
+                                <p style="text-align: left;">
+                                    <span style="font-size:16px;">高雄</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立中山大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">義守大學</span></li>
+                                </ul>
+                                <p style="text-align: left;">
+                                    <span style="font-size:16px;">屏東</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立屏東大學</span></li>
+                                </ul>
+                                <p style="text-align: left;">
+                                    <span style="font-size:16px;">宜蘭</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立宜蘭大學</span></li>
+                                </ul>
+                                <p style="text-align: left;">
+                                    <span style="font-size:16px;">花蓮</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立東華大學</span></li>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">慈濟大學</span></li>
+                                </ul>
+                                <p style="text-align: left;">
+                                    <span style="font-size:16px;">臺東</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立臺東大學</span></li>
+                                </ul>
+                                <p style="text-align: left;">
+                                    <span style="font-size:16px;">金門</span></p>
+                                <ul>
+                                    <li style="text-align: left;">
+                                        <span style="font-size:16px;">國立金門大學</span></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="method_2" class="identity" style="display: none;">教師地圖</div>
+            <div id="method_3" class="identity" style="display: none;">科技部單位</div>
+
+        </div>
+        <footer class="footer">
+            <p>台灣學術倫理教育資源中心 2017</p>
+        </footer>
     </div>
+
 </body>
 
 </html>
