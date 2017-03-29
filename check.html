@@ -19,64 +19,189 @@
         }
     </script>
     <style>
-        @media (min-width: 768px) {
-            .container {
-                max-width: 1000px;
-            }
-            .header {
-                margin-bottom: 30px;
-            }
-        }
-        
-        @media screen and (max-width: 768px) {
-            .hidden-mb {
-                display: none!important
-            }
-        }
-        
         body {
             font-family: "微軟正黑體", Arial;
             font-size: 20px;
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
+        }
+        
+        .logo-img {
+            width: 350px;
         }
         
         .header {
-            border-bottom: 1px solid #e5e5e5;
+            height: 15px;
+            background-color: #0086ce;
+            margin-bottom: 10px;
+        }
+        
+        .identity {
+            margin-top: 30px;
+        }
+        
+        .text {
+            line-height: 2em;
+        }
+        
+        .divtable {
+            display: table;
+            width: 100%;
+            border: 1px solid #eee;
+        }
+        
+        .divtable .thead {
+            display: table-header-group;
+            background-color: #0086ce;
+            color: #fff;
+        }
+        
+        .divtable .tbody {
+            display: table-row-group;
+            background-color: #fff;
+        }
+        
+        .divtable .tr {
+            display: table-row;
+        }
+        
+        .divtable .th,
+        .divtable .td {
+            display: table-cell;
+            padding: 5px;
+        }
+        
+        .divtable .td {
+            color: #666666;
+            border: 1px solid #ddd;
+            word-wrap: break-word;
         }
     </style>
 </head>
 
 <body>
+
     <div class="container">
-        <div class="header">
-            <h3>臺灣學術倫理資源教育中心－身分查詢
-            </h3>
+        <div class="row">
+            <div class="logo">
+                <a href="https://ethics.nctu.edu.tw">
+                    <img src="https://ethics.nctu.edu.tw/static/rwd/images/logo.png?v=20170221" alt="" class="logo-img img-responsive">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="header"></div>
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-sm-4">
+                <span>請選擇您的身分：</span>
+                <select name="identity" id="sel_identity" onchange="changeidentity()" class="form-control" style="height:45px; font-size: 20px;">
+                        <option value="0" default>請選擇</option>
+                        <option value="1">大學部</option>
+                        <option value="1">碩士班</option>
+                        <option value="1">碩士在職專班</option>
+                        <option value="1">博士班</option>
+                        <option value="2">教師</option>
+                        <option value="2">醫師</option>
+                        <option value="2">醫療人員</option>
+                        <option value="2">研究人員</option>
+                        <option value="2">研究助理</option>
+                        <option value="2">行政人員</option>
+                        <option value="3">其他</option>
+                        <option value="4">管理者</option>
+                    </select>
+            </div>
         </div>
         <div class="row">
-            <form action="">
-
-                <div class="col-sm-4">
-                    <span>請選擇您的身分：</span>
-                    <select name="identity" id="sel_identity" onchange="changeidentity()" class="form-control">
-                <option value="0" default>請選擇</option>
-                <option value="1">必修學生</option>
-                <option value="2">教師</option>
-                <option value="3">科技部補助相關單位所屬人員</option>
-
-            </select></div>
-            </form>
-            <br>
             <div id="method_1" class="identity col-xs-12 " style="display: none;">
-                <div class="hidden-mb">
-                    要顯示的東西1
+                <div class="text">如果您是以下地圖中學校的學生，請依說明操作。若查無帳號或不清楚密碼，請洽貴單位負責人。</div>
+                <div class="divtable">
+                    <div class="thead">
+                        <div class="tr">
+                            <div class="th">登入身分</div>
+                            <div class="th">帳號</div>
+                            <div class="th">適用學校</div>
+                        </div>
+                    </div>
+                    <div class="tbody">
+                        <div class="tr">
+                            <div class="td">必修學生</div>
+                            <div class="td">帳號：帳號為您的學號。 <br>說明：若學號有英文字母，請一併輸入，並且留意大小寫。 </div>
+                            <div class="td">下圖所有學校<br>（除國立臺灣大學）</div>
+                        </div>
+                        <div class="tr">
+                            <div class="td">個人註冊</div>
+                            <div class="td">帳號：帳號為您的電子信箱。</div>
+                            <div class="td">國立臺灣大學</div>
+                        </div>
+                    </div>
                 </div>
-                <div style="max-width:1000px;"><img src="http://ethics103.nctu.edu.tw/Ethics103/Files/deco_pic/ree_schoolmap.png" alt="" class="img-responsive hidden-mb"></div>
+                <img src="" alt="學生地圖" class="img-responsive">
             </div>
-            <div id="method_2" class="identity" style="display: none;">教師地圖</div>
-            <div id="method_3" class="identity" style="display: none;">科技部單位</div>
+            <div id="method_2" class="identity col-xs-12 " style="display: none;">
+                <div class="text">如果您是以下地圖中學校／機構的教師或研究相關人員，請依說明操作。若查無帳號或不清楚密碼，請洽貴單位負責人。</div>
+                <div class="divtable">
+                    <div class="thead">
+                        <div class="tr">
+                            <div class="th">登入身分</div>
+                            <div class="th">帳號</div>
+                            <div class="th">適用學校／機構</div>
+                        </div>
+                    </div>
+                    <div class="tbody">
+                        <div class="tr">
+                            <div class="td">必修教師及研究相關人員</div>
+                            <div class="td">帳號：帳號為您的電子信箱。</div>
+                            <div class="td">國泰醫院、新光醫院、靜宜大學...</div>
+                        </div>
+                        <div class="tr">
+                            <div class="td">個人註冊</div>
+                            <div class="td">帳號：帳號為您的電子信箱。</div>
+                            <div class="td">崑山科技大學...</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="" alt="教師地圖" class="img-responsive">
+            </div>
+            <div id="method_3" class="identity col-xs-12 " style="display: none;">
+                <div class="text">若您非必修學生、必修教師及研究相關人員、管理者，請至註冊帳號申請網站帳號，並依說明操作。</div>
+                <div class="divtable">
+                    <div class="thead">
+                        <div class="tr">
+                            <div class="th">登入身分</div>
+                            <div class="th">帳號</div>
+                            <div class="th">適用學校</div>
+                        </div>
+                    </div>
+                    <div class="tbody">
+                        <div class="tr">
+                            <div class="td">個人註冊</div>
+                            <div class="td">帳號：帳號為您的電子信箱。</div>
+                            <div class="td">所有非必修課程者</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="method_4" class="identity col-xs-12 " style="display: none;">
+                <div class="text">如果您是以下地圖中學校／機構的管理者，請依說明操作。</div>
+                <div class="divtable">
+                    <div class="thead">
+                        <div class="tr">
+                            <div class="th">登入身分</div>
+                            <div class="th">帳號</div>
+                            <div class="th">適用學校</div>
+                        </div>
+                    </div>
+                    <div class="tbody">
+                        <div class="tr">
+                            <div class="td">管理者</div>
+                            <div class="td">帳號：帳號為您的電子信箱，密碼請洽貴單位負責人。</div>
+                            <div class="td">下圖所有學校／機構</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="" alt="管理地圖" class="img-responsive">
+            </div>
 
         </div>
 
